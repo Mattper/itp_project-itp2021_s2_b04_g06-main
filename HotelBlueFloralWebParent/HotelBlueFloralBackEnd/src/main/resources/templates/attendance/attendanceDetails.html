@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Attendance Details</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	
+	<!-- Attendance div -->
+	<div align="center"  class="container my-2">
+		<h1>Employee Attendance Details</h1><br>
+		<!-- Link to Add Attendance Form -->
+		<a th:href = "@{/showAddAttendanceForm}">Add attendance</a><br><br>
+		
+		
+		<table cellpadding="10px"  class = "table table-striped table-responsive-md">
+			<thead>
+				<tr>
+					<th>Employee ID</th>
+					<th>
+					<a th:href="@{'/page/' + ${currentPage} + '?sortField=eid&sortDir=' + ${reverseSortDir}}">
+							Date</a>
+					</th>
+					<th>In-Time</th>
+					<th>Out-Time</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="attendance : ${listAttendance}">
+					<td th:text="${attendance.eid}"></td>
+					<td th:text="${attendance.date}"></td>
+					<td th:text="${attendance.intime}"></td>
+					<td th:text="${attendance.outtime}"></td>
+					<td><a th:href="@{/showAttendanceUpdateForm/{aid}(aid=${attendance.aid})}">Update</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;<a th:href="@{/deleteAttendance/{aid}(aid=${attendance.aid})}">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div th:if = "${totalPages>1}">
+			<div  class = "row col-sm-10">
+				<div  class = "col-sm-2">Total Rows:[[${totalItems}]]</div>
+				
+					<div  class = "col-sm-1">
+						<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+						<a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
+						<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
+						</span>
+					</div>
+					<div  class = "col-sm-1">
+						<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
+						<span th:unless="${currentPage < totalPages}">Next</span>
+					</div>
+					<div  class = "col-sm-1">
+						<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
+						<span th:unless="${currentPage < totalPages}">Last</span>
+					</div>
+			</div>	
+		</div>
+		<!--Staff Home page link -->
+		<a th:href="@{/showMainStaff}">back to Main Staff Page</a>
+	</div>
+</body>
+</html>

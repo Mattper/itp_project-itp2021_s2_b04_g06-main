@@ -1,0 +1,82 @@
+<!-- Main Staff Management Page -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: page_head('Staff - HotelBlueFloral Customer')">
+	<style>
+		
+ul li a{
+	color:white;
+	padding:5px;
+	text-decoration: none;
+}
+	</style>
+</head>
+<body>
+
+ 
+  <div th:replace="navigation :: menu"></div>
+ 
+	<div align="center">
+	<form  action="#" th:action="@{/searchEmployeeList}" method="get" style="border:0;
+																			width:auto;
+																			padding:50px;
+																			margin-bottom:10px;
+																			background-color:rgba(0,0,0,0.8);														 
+																			font-family:'Poppins', sans-serif;
+																			font-size: 18px;
+																			color: white">
+		<table class="mainTable" style="width: 100%;padding:10px;">
+			<tr>
+				<td  align="center" style="margin:auto;">
+					<h1 style="letter-spacing: 3px;
+						font-weight: bolder;
+						color:lightblue;">Staff Management</h1>
+				
+					<input type="search" name="eid" placeholder="Enter employee ID" required="required" style="border:0;
+																										width:320px;
+																										margin:auto;
+																										padding:5px;
+																										border-radius: 5px;
+																										font-family: 'Poppins', sans-serif;
+																										font-size: 16px;
+																										border-bottom:4px solid lightblue;"	/><br>
+					<button type="submit" value="search" style="border:0;
+															padding: 10px;
+															width: 320px;
+															margin-top:10px;
+															background-color:lightblue;
+															text-transform: uppercase;
+															letter-spacing: 3px;
+															font-weight: bolder;
+															border-radius: 25px;">View employee Details</button>
+				</td>
+				<td style="margin:auto;">
+					<div align="left">	
+						<ul style="list-style-type:none;
+							margin:5px;
+							padding:5px;
+							overflow:hidden;">
+							<li style="padding:5px;"><!-- Link to Add Attendance Form --><a th:href = "@{/showAddAttendanceForm}" style="color:white;padding:5px;text-decoration: none;">Add attendance</a><br></li>
+							<li style="padding:5px;"><!-- Link to Add Activity Form --><a th:href = "@{/showAddActivityForm}" style="color:white;padding:5px;text-decoration: none;">Add activity</a><br></li>
+							<li style="padding:5px;"><!-- Link to Add Employee Form --><a th:href = "@{/showAddEmployeeForm}" style="color:white;padding:5px;text-decoration: none;">Add Employee</a><br></li>
+							<li style="padding:5px;"><!-- Link to View Employee List --><a th:href = "@{/viewEmployeeList}" style="color:white;padding:5px;text-decoration: none;">view Employee List</a><br></li>
+							<li style="padding:5px;"><!-- Link to View Activity Details--><a th:href = "@{/viewActivityDetails}" style="color:white;padding:5px;text-decoration: none;">view Activity Details</a><br></li>
+							<li style="padding:5px;"><!-- Link to View Attendance Details --><a th:href = "@{/viewAttendanceDetails}" style="color:white;padding:5px;text-decoration: none;">view Attendance Details</a><br></li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	
+	</div>
+	<section class="logo">
+    <img th:src="@{/images/logo.png}">
+  </section>
+    
+   <div th:replace="fragments :: footer"></div>
+  
+</body>
+</html>

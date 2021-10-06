@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: page_head('Foods - HotelBlueFloral Customer')"/>
+<body>
+   <section class="sub-header">
+    <div class="container-fluid">
+      <div th:replace="navigation :: menu"></div>
+    </div>
+       <h1>Foods</h1>
+    </section>
+    <section class="foods_content">
+    <div class="row">
+      <div class="content_col">
+        <h1>We Have Best Foods you Can Ever Eat!</h1>
+        <p>Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Quaerat nobis nisi nesciunt, recusandae ad earum eligendi suscipit atque saepe officia quis exercitationem doloremque nostrum sunt minus optio soluta, quo vel!</p>
+        <a href="" class="hero-btn red-btn">SEE NOW</a>
+      </div>
+      <div class="content_col">
+        <img th:src="@{/images/food_banner.jpeg}">
+      </div>
+    </div>
+  </section>
+  <section class="Foods">
+    <h1>Foods We Offer</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit enim illo necessitatibus atque corporis, magni blanditiis provident labore consequatur dolore recusandae, laborum, libero a aut. Distinctio, eligendi libero autem blanditiis.</p>
+
+    <div class="row">
+      <div class="events-col">
+        <img th:src="@{/images/lunch.jpeg}">
+        <div class="layer">
+          <h3>LUNCH</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis placeat saepe fugiat esse ad corrupti quis sed molestias</p>
+        </div>
+      </div>
+      <div class="events-col">
+        <img th:src="@{/images/dinner.jpg}">
+        <div class="layer">
+          <h3>DINNER</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis placeat saepe fugiat esse ad corrupti quis sed molestias</p>
+        </div>
+      </div>
+      <div class="events-col">
+        <img th:src="@{/images/cocktails.jpg}">
+        <div class="layer">
+          <h3>COCKTAILS</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis placeat saepe fugiat esse ad corrupti quis sed molestias</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br></br>
+    <section class="logo">
+    <img th:src="@{/images/logo.png}">
+  </section>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

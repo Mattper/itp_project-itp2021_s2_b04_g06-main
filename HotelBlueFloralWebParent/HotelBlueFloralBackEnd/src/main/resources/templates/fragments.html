@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="page_head(title)">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewpoint" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
+       <title>[[${title}]]</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+</head>
+<body>
+
+ 
+     <th th:fragment="column_link(fieldName, columnLabel)">
+                <a class="text-white"
+                    th:href="@{'/customers/page/' + ${currentPage} + '?sortField=' + ${fieldName} + '&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+                    [[${columnLabel}]]
+                </a>
+                <span th:if="${sortField == fieldName}"
+                      th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
+      </th>
+      
+      <a th:fragment="page_link(pageNum, label)"
+        class="page-link" 
+        th:href="@{'/customers/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+        [[${label}]]
+      </a>
+      
+      <div th:fragment="footer" class="text-center m-3">
+      <h4>About Us</h4>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto fugiat ullam labore corrupti quod quisquam, dolore repellendus<br> ad non quis qui iure numquam facilis optio! Veritatis nostrum voluptates, omnis repudiandae.</p>
+    <div class="icons">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-facebook-messenger"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram-square"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+    <p>Copyright <i class="far fa-copyright"></i> HotelBlueFloral</p>
+    </div>
+
+</body>
+</html>

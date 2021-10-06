@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: page_head('Home - HotelBlueFloral Customer')"/>
+<body>
+
+   <section class="header-2">
+    <div class="container-fluid">
+      <div th:replace="navigation :: menu"></div>
+    </div>
+     <div class="text-box">
+      <h1>Colombo Most Divine Place For Visit</h1>
+      <p>Offering striking views of the Indian Ocean, Beira Lake and the city beyond, our 500 guest rooms and suites, and 41 serviced apartments are tastefully furnished to <br> complement the urban-oceanside location and are among the largest in Colombo.</p>
+      <a href="" class="hero-btn red-btn">Visit Us to feel this place!</a>
+    </div>
+    </section>
+    <section>
+  <section class="Foods">
+    <h1>Foods We Offer</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit enim illo necessitatibus atque corporis, magni blanditiis provident labore consequatur dolore recusandae, laborum, libero a aut. Distinctio, eligendi libero autem blanditiis.</p>
+
+    <div class="row">
+      <div class="Foods-col">
+        <h3>LUNCH</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolorem esse ab. Architecto distinctio, culpa unde sint amet praesentium placeat cum exercitationem ullam? Impedit, iste dolorum expedita tenetur quaerat natus.</p>
+      </div>
+      <div class="Foods-col">
+        <h3>DINNER</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolorem esse ab. Architecto distinctio, culpa unde sint amet praesentium placeat cum exercitationem ullam? Impedit, iste dolorum expedita tenetur quaerat natus.</p>
+      </div>
+      <div class="Foods-col">
+        <h3>COCKTAILS</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolorem esse ab. Architecto distinctio, culpa unde sint amet praesentium placeat cum exercitationem ullam? Impedit, iste dolorum expedita tenetur quaerat natus.</p>
+      </div>
+    </div>
+  </section>
+  </section>
+<!--   For the event section -->
+  <section class="events">
+    <h1>Our New Spring Event Packages</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit enim illo necessitatibus atque corporis, magni blanditiis provident labore consequatur dolore recusandae, laborum, libero a aut. Distinctio, eligendi libero autem blanditiis.</p>
+
+    <div class="row">
+      <div class="events-col">
+        <img src="images/weddings.jpg">
+        <div class="layer">
+          <h3>WEDDINGS</h3>
+        </div>
+      </div>
+      <div class="events-col">
+        <img src="images/birthdays.jpg">
+        <div class="layer">
+          <h3>BIRTHDAYS</h3>
+        </div>
+      </div>
+      <div class="events-col">
+        <img src="images/office.jpg">
+        <div class="layer">
+          <h3>OFFICIAL CONFERENCES</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="customer">
+    <h1>What Our Customer Says</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, sunt ducimus architecto doloribus nemo ipsam, quos fugit itaque ipsa neque incidunt eveniet nihil veritatis, reiciendis aliquid. Dolorem ratione illum dicta.</p>
+    <div class="row">
+      <div class="customer-col">
+        <img th:src="@{/images/user2.jpg}">
+        <div>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, dolorum quam commodi, voluptatem, quis ad magni ex molestias rem quasi expedita impedit dolore iusto cupiditate iure asperiores iste. Ea, magnam.</p>
+          <h3>John Steves</h3>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+      </div>
+      <div class="customer-col">
+        <img th:src="@{/images/user1.jpg}">
+        <div>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, dolorum quam commodi, voluptatem, quis ad magni ex molestias rem quasi expedita impedit dolore iusto cupiditate iure asperiores iste. Ea, magnam.</p>
+          <h3>Christine Barley</h3>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="cta">
+    <h1>Join With Us For Feel Our Services Anywhere From The World</h1>
+    <a href="" class="hero-btn red-btn">CONTACT US</a>
+  </section>
+    <br></br>
+    <section class="logo">
+    <img th:src="@{/images/logo.png}">
+  </section>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

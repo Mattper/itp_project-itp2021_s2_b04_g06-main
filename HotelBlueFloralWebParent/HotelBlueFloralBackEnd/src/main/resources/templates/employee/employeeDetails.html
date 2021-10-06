@@ -1,0 +1,139 @@
+<!-- Employee Details Page -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+	<title>Employee Details</title>
+	<style>
+					
+			body{
+				background-color: #ecf1f0;
+				font-family:'Poppins', sans-serif;
+			}
+			
+			div.main{
+				width:100%;
+			}
+			
+			div.title{
+				margin:auto;
+				width:95%;
+				border:0;
+				padding:20px;
+				background-color:rgba(0,0,0,0.8);
+				border-radius:15px; 
+			}
+			
+			div.details{
+				width:95%;
+				margin:auto;
+				padding:20px;
+				
+			}
+			
+			label{
+				font-size: 16px;
+				padding:20px auto 20px auto;
+				margin:20px auto 20px auto;
+			}
+			
+			a{
+				font-size: 14px;
+				padding:10px;
+				width:200px;
+				margin:10px;
+				display: inline-block;
+				text-decoration: none;
+				background: lightblue;
+				color:black;
+				background-color:lightblue;
+				text-transform: uppercase;
+				letter-spacing: 3px;
+				font-weight: bolder;
+				border-radius: 25px;
+			}
+			
+			a:hover{
+				color:white;
+			}
+			
+			#delete:hover{
+				background: red;
+				color:white;
+			}
+			
+			h1{
+				font-size:40px;
+				letter-spacing: 3px;
+				font-weight: bolder;
+				color:lightblue;
+			}
+			
+			h3{
+				font-size:25px;
+				letter-spacing: 3px;
+				font-weight: bolder;
+				color:black;
+			}
+	</style>
+</head>
+<body>
+<div class="main">
+
+	<div class="title">
+	<h1>Employee details</h1>
+	<hr>
+	</div>	
+			<!-- Employee details div -->
+			<div align="left" class="details">
+			
+				<h3>Personal information</h3>
+				<hr>
+				
+				<label>Employee ID : </label>
+				<label th:text="${employee.eid}"></label><br>
+				<label>First Name : </label>
+				<label th:text="${employee.fname}"></label><br>
+				<label>Last Name : </label>
+				<label th:text="${employee.lname}"></label><br>
+				<label>Gender : </label>
+				<label th:text="${employee.gender}"></label><br>
+				<label>Date of birth : </label>
+				<label th:text="${employee.dob}"></label><br>
+				<label>NIC : </label>
+				<label th:text="${employee.nic}"></label><br>
+				<label>Address : </label>
+				<label th:text="${employee.address}"></label><br>
+				
+				<h3>Contact Details</h3>
+				<hr>
+				
+				<label>Contact No : </label>
+				<label th:text="${employee.contactNo}"></label><br>
+				<label>Email : </label>
+				<label th:text="${employee.email}"></label><br>
+				<label>Emergency Contact No : </label>
+				<label th:text="${employee.emContactNo}"></label><br>
+				
+				<h3>Employment Details</h3>
+				<hr>
+				
+				<label>Hired date : </label>
+				<label th:text="${employee.hiredDate}"></label><br>
+				<label>Employed As : </label>
+				<label th:text="${employee.empStatus}"></label><br>
+				<label>Employee Role : </label>
+				<label th:text="${employee.rolename}"></label><br>
+				
+			</div>
+			
+			<!-- Employee details Update,Delete -->
+			<div align="right">
+				<a th:href="@{/showEmployeeUpdateForm/{eid}(eid=${employee.eid})}">Update Employee</a><br>
+				<a id="delete" th:href="@{/deleteEmployee/{eid}(eid=${employee.eid})}">Delete Employee</a>
+			</div>
+	
+	</div>
+	
+</body>
+</html>

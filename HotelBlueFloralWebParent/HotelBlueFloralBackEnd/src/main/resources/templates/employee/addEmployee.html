@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+	<title>Add Employee</title>
+	<link rel="stylesheet" href=""th:href="@{staffStyles.css}"/>
+</head>
+<body>
+	
+	<div class="formbox">
+		
+		<form action="#" th:action="@{/addEmployee}" th:object="${employee}" method="POST">
+				
+				<h1>Add Employee</h1>
+			<table class="addemp" cellpadding="10px">
+				<tr>
+				<td align="left">			
+				<h2>Personal Information</h2>
+				
+				<label>First Name</label><br>
+				<input type="text" th:field="*{fname}" placeholder="First Name" required="required"><br><br>
+				<label>Last Name</label><br>
+				<input type="text" th:field="*{lname}" placeholder="Last Name"><br><br>
+				
+				<label>Gender</label><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" th:field="*{gender}" value="Male">
+				<label>Male</label>
+				<input type="radio" name="gender" th:field="*{gender}" value="Female">
+				<label>Female</label><br><br>
+				
+				<label>Date Of Birth</label><br>
+				<input type="date" th:field="*{dob}" placeholder="Date of Birth"  required="required"><br><br>
+				<label>NIC</label><br>
+				<input type="text" th:field="*{nic}" placeholder="NIC"  required="required"><br><br>
+				<label>Address</label><br>
+				<input type="text" th:field="*{address}" placeholder="Address"  required="required"><br><br>
+				
+				</td>
+				<td>
+				<h2>Contact Details</h2>
+				<label>Contact No</label><br>
+				<input type="text" th:field="*{contactNo}" placeholder="Contact No"  required="required"><br><br>
+				<label>Email</label><br>
+				<input type="email" th:field="*{email}" placeholder="Email"><br><br>
+				<label>Emergency Contact No</label><br>
+				<input type="text" th:field="*{emContactNo}" placeholder="Emergency Contact No"  required="required"><br><br>
+				
+				<h2>Employment Details</h2>
+				<label>Hired Date</label><br>
+				<input type="date" th:field="*{hiredDate}" placeholder="Hired Date"  required="required"><br><br>
+				
+				<label>Employment Status</label><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="empStatus" th:field="*{empStatus}" value="Full-Time">
+				<label>Full-Time</label>
+				<input type="radio" name="empStatus" th:field="*{empStatus}" value="Part-Time">
+				<label>Part-Time</label><br><br>
+				
+				<label>Employee Role</label><br>
+				<select name="empRole" th:field="*{rolename}">
+					<option value="Waiter">Waiter</option>
+					<option value="Manager">Manager</option>
+					<option value="Accountant">Accountant</option>
+				</select><br><br>
+				</td>
+				</tr>
+			</table>					
+				
+				<div align="center">
+				<button type="submit">Submit Details</button>
+				</div>
+			
+		</form>
+	</div>
+</body>
+</html>

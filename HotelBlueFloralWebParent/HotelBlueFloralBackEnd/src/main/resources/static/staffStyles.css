@@ -1,0 +1,95 @@
+@charset "ISO-8859-1";
+
+body{
+	background-color: #ecf1f0;
+}
+
+h1{
+	font-size:40px;
+	letter-spacing: 3px;
+	font-weight: bolder;
+	color:lightblue;
+}
+
+h2{
+	font-size:25px;
+	letter-spacing: 3px;
+	font-weight: bolder;
+	color:lightblue;
+}
+
+.formbox{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+
+form{
+	border:0;
+	width:auto;
+	padding:50px;
+	background-color:rgba(0,0,0,0.8);
+	border-radius:15px; 
+	font-family:'Poppins', sans-serif;
+	font-size: 18px;
+	color: white
+}
+
+input{
+	border:0;
+	width:320px;
+	margin:5px;
+	padding:5px;
+	border-radius: 5px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	border-bottom:4px solid lightblue;
+}
+input[type=radio]{
+	width:auto;
+	padding:5px;
+}
+
+button{
+	border:0;
+	padding: 10px;
+	width: 320px;
+	background-color:lightblue;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-weight: bolder;
+	border-radius: 25px;
+}
+
+button:hover{
+	color:white;
+}
+
+select{
+	border:0;
+	width:320px;
+	margin:5px;
+	padding:5px;
+	border-radius: 5px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	border-bottom:4px solid lightblue;
+}
+
+table.addemp{
+	width:100%;
+	padding:15px;
+}
+table.addemp td{
+	margin:10px;
+}
+
+
+
+
+
+
+
+
+

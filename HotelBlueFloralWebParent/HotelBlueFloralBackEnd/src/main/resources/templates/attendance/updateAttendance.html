@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+	<title>Update Attendance</title>
+	
+	<style>
+		
+		body{
+			background-color: #ecf1f0;
+		}
+		
+		h1{
+			font-size:40px;
+			letter-spacing: 3px;
+			font-weight: bolder;
+			color:lightblue;
+		}
+		
+		h2{
+			font-size:25px;
+			letter-spacing: 3px;
+			font-weight: bolder;
+			color:lightblue;
+		}
+		
+		.formbox{
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+		}
+		
+		form{
+			border:0;
+			width:auto;
+			padding:50px;
+			background-color:rgba(0,0,0,0.8);
+			border-radius:15px; 
+			font-family:'Poppins', sans-serif;
+			font-size: 18px;
+			color: white
+		}
+		
+		input{
+			border:0;
+			width:320px;
+			margin:5px;
+			padding:5px;
+			border-radius: 5px;
+			font-family: 'Poppins', sans-serif;
+			font-size: 16px;
+			border-bottom:4px solid lightblue;
+		}
+		input[type=radio]{
+			width:auto;
+			padding:5px;
+		}
+		
+		button{
+			border:0;
+			padding: 10px;
+			width: 320px;
+			background-color:lightblue;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			font-weight: bolder;
+			border-radius: 25px;
+		}
+		
+		button:hover{
+			color:white;
+		}
+		
+		select{
+			border:0;
+			width:320px;
+			margin:5px;
+			padding:5px;
+			border-radius: 5px;
+			font-family: 'Poppins', sans-serif;
+			font-size: 16px;
+			border-bottom:4px solid lightblue;
+		}
+		
+		table.addemp{
+			width:100%;
+			padding:15px;
+		}
+		table.addemp td{
+			margin:10px;
+		}
+				
+	
+	</style>
+	
+</head>
+<body>
+	<div align="center" class="formbox">
+		
+			<form action="#" th:action="@{/addAttendance}" th:object="${attendance}"
+			method="POST">
+				
+				<h1>Update Attendance</h1>
+				
+				<!-- Add hidden form field to handle update -->
+				<input type="hidden" th:field="*{aid}"/>
+				<label>Employee ID</label><br>
+					<input type="text" value="text" th:field="*{eid}" placeholder="Employee ID" required="required"><br><br>
+				
+					<label>Date</label><br>
+					<input type="date" th:field="*{date}" placeholder="Date" required="required"><br><br>
+				
+					<label>In-Time</label><br>
+					<input type="time" th:field="*{intime}" placeholder="In-Time" required="required"><br><br>
+				
+					<label>Out-Time</label><br>
+					<input type="time" th:field="*{outtime}" placeholder="Out-Time" required="required"><br><br>
+				
+					<button type="submit">Add Attendance</button>
+		</form>
+			
+	</div>
+</body>
+</html>

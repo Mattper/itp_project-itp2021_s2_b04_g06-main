@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+	<title>update Activity</title>
+	<style>
+		
+		body{
+			background-color: #ecf1f0;
+		}
+		
+		h1{
+			font-size:40px;
+			letter-spacing: 3px;
+			font-weight: bolder;
+			color:lightblue;
+		}
+		
+		h2{
+			font-size:25px;
+			letter-spacing: 3px;
+			font-weight: bolder;
+			color:lightblue;
+		}
+		
+		.formbox{
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+		}
+		
+		form{
+			border:0;
+			width:auto;
+			padding:50px;
+			background-color:rgba(0,0,0,0.8);
+			border-radius:15px; 
+			font-family:'Poppins', sans-serif;
+			font-size: 18px;
+			color: white
+		}
+		
+		input{
+			border:0;
+			width:320px;
+			margin:5px;
+			padding:5px;
+			border-radius: 5px;
+			font-family: 'Poppins', sans-serif;
+			font-size: 16px;
+			border-bottom:4px solid lightblue;
+		}
+		input[type=radio]{
+			width:auto;
+			padding:5px;
+		}
+		
+		button{
+			border:0;
+			padding: 10px;
+			width: 320px;
+			background-color:lightblue;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			font-weight: bolder;
+			border-radius: 25px;
+		}
+		
+		button:hover{
+			color:white;
+		}
+		
+		select{
+			border:0;
+			width:320px;
+			margin:5px;
+			padding:5px;
+			border-radius: 5px;
+			font-family: 'Poppins', sans-serif;
+			font-size: 16px;
+			border-bottom:4px solid lightblue;
+		}
+		
+		table.addemp{
+			width:100%;
+			padding:15px;
+		}
+		table.addemp td{
+			margin:10px;
+		}
+				
+	
+	</style>
+</head>
+<body>
+	<div align="center" class="formbox">
+		
+			<form action="#" th:action="@{/addActivity}" th:object="${activity}"
+			method="POST">
+			
+				<h1>Update Activity</h1>
+			
+				<!-- Add hidden form field to handle update -->
+				<input type="hidden" th:field="*{acid}"/>
+				
+				<label>Employee ID</label><br>
+				<input type="text" th:field="*{eid}"><br><br>
+				
+				<label>Date</label><br>
+				<input type="date" th:field="*{date}"><br><br>
+				
+				<label>Assigned To</label><br>
+				<select name="assignedTo" th:field="*{assignedTo}">
+					<option value="Main Hall">Main Hall</option>
+					<option value="Hall1">Hall 1</option>
+					<option value="Hall2">Hall 2</option>
+					<option value="Hall3">Hall 3</option>	
+				</select><br><br>
+				
+				<button type="submit"> Update Activity</button>
+		</form>
+			
+	</div>
+
+</body>
+</html>

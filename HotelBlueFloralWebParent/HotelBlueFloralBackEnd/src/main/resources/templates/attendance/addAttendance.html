@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+	<title>Add Attendance</title>
+	<link rel="stylesheet" href=""th:href="@{staffStyles.css}"/>
+	
+</head>
+<body>
+		<div class="formbox">
+		
+				<form action="#" th:action="@{/addAttendance}" th:object="${attendance}" method="POST">
+					
+					<h1>Add Attendance</h1><br>
+					
+					<label>Employee ID</label><br>
+					<input type="text" value="text" th:field="*{eid}" placeholder="Employee ID" required="required"><br><br>
+				
+					<label>Date</label><br>
+					<input type="date" th:field="*{date}" placeholder="Date" required="required"><br><br>
+				
+					<label>In-Time</label><br>
+					<input type="time" th:field="*{intime}" placeholder="In-Time" required="required"><br><br>
+				
+					<label>Out-Time</label><br>
+					<input type="time" th:field="*{outtime}" placeholder="Out-Time" required="required"><br><br>
+				
+					<button type="submit">Add Attendance</button>
+				</form>
+		</div>	
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-HotelBlueFloralBackEndApplication<HotelBlueFloralBackEnd>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.hotelbluefloral.admin.HotelBlueFloralBackEndApplication",
+      "projectName": "HotelBlueFloralBackEnd",
+      "args": ""
+    }
+  ]
+}

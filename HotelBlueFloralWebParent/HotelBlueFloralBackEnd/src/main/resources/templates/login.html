@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewpoint" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
+<title>Login - HotelBlueFloral</title>
+   <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+  <div class="container-fluid text-center">
+   <div>
+     
+   </div>
+    <div>
+       <img th:src="@{/images/logo_main.png}"/>
+    </div>
+    <br></br>
+    <form th:action="@{/login}" method="post" style="max-width: 350px; margin: 0 auto">
+        <div th:if="${param.error}">
+          <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+        </div>
+        <div th:if="${param.logout}">
+           <p class="text-warning">You have been logged out!.</p>
+        </div>
+        <div class="border border-secondary rounded p-3">
+            <p>Access to HotelBlueFloral Online Control Panel</p>
+            <p>
+              <input type="email" name="email" class="form-control" placeholder="E-mail" required/>
+            </p>
+            <p>
+              <input type="password" name="password" class="form-control" placeholder="Password" required/>
+            </p>
+            <p>
+               <input type="checkbox" name="remember-me"/>&nbsp;Remember Me
+            </p>
+            <p>
+              <input type="submit" value="Login" class="btn btn-primary"/>
+            </p>
+        </div>
+    </form>
+    <br></br>
+    <div>
+      <p>HotelBlueFloral - Copyright &copy; HotelBlueFloral</p>
+    </div>
+  </div>
+  
+
+</body>
+</html>
